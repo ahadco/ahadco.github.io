@@ -32,3 +32,7 @@
 - Public users cannot read `marriage_applications` through the publishable key (RLS verified).
 
 - Added immutable application activity audit trail (status, notes, assignment events) visible only to active staff.
+
+- Revoked direct RPC execution of the SECURITY DEFINER audit trigger function; trigger-only execution remains.
+
+- Enforced stronger 12+ character password quality for new account signups (letter + number) without blocking existing logins.
