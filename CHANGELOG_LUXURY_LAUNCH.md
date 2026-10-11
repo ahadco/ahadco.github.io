@@ -16,3 +16,8 @@
 - Updated PWA manifests and service-worker shell cache.
 - Validated live Edge Function submission from browser UI and cleaned all QA records.
 - Validated member signup request and cleaned the synthetic QA auth user.
+
+- Published the clean production repository at `ahadco/ahadco.github.io` and verified GitHub Pages status `built`.
+- Verified the live production URL and key assets return HTTP 200.
+- Verified the production marriage-application UI against Supabase (HTTP 201) and removed the synthetic record.
+- Added Arabic mapping for common member-authentication errors and email throttling.
