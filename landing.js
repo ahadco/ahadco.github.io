@@ -102,7 +102,8 @@
       preferred_age_max: max,
       source: 'website',
       consent_privacy: fd.get('consent') === 'on',
-      consent_contact: fd.get('consent') === 'on'
+      consent_contact: fd.get('consent') === 'on',
+      website: String(fd.get('website') || '').trim()
     };
 
     submit.disabled = true;

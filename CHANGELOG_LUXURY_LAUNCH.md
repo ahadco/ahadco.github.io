@@ -21,3 +21,12 @@
 - Verified the live production URL and key assets return HTTP 200.
 - Verified the production marriage-application UI against Supabase (HTTP 201) and removed the synthetic record.
 - Added Arabic mapping for common member-authentication errors and email throttling.
+
+## 2026-10-11 — Staff Matchmaker Dashboard
+- Added staff-only `admin.html` control center for marriage applications.
+- Added filtering, search, pipeline status updates, internal notes and assignment.
+- Added explicit staff authorization check through `staff_members` + RLS.
+- Added anti-bot honeypot to the public marriage application form.
+- Added production indexes for application pipeline queries.
+- Updated service worker cache to v5 staff shell.
+- Public users cannot read `marriage_applications` through the publishable key (RLS verified).

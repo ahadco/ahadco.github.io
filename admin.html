@@ -1,0 +1,26 @@
+﻿<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#171b17">
+<title>لوحة الخطّابة عهد | AHAD</title>
+<link rel="stylesheet" href="./admin.css">
+</head>
+<body>
+<div class="shell">
+<header class="top"><a href="./" class="brand"><span>ع</span><div><b>عهد</b><small>PRIVATE MATCHMAKING · STAFF</small></div></a><div class="top-actions"><span id="staffName"></span><button id="refreshBtn" class="ghost hidden">تحديث</button><button id="logoutBtn" class="ghost hidden">خروج</button></div></header>
+<main>
+<section id="loginView" class="login-card">
+<span class="kicker">STAFF ACCESS</span><h1>دخول فريق عهد</h1><p>هذه الصفحة مخصصة لأعضاء فريق عهد المعتمدين فقط.</p>
+<form id="loginForm"><label>البريد الإلكتروني<input id="email" type="email" autocomplete="email" required></label><label>كلمة المرور<input id="password" type="password" minlength="8" autocomplete="current-password" required></label><button class="primary" type="submit">دخول آمن</button><div id="loginStatus" class="status" role="status"></div></form>
+</section>
+<section id="dashboardView" class="hidden">
+<div class="hero"><div><span class="kicker">MATCHMAKER CONTROL CENTER</span><h1>لوحة الخطّابة</h1><p>فرز الطلبات، التأهيل، التواصل، المطابقة، ومتابعة الحالات الجادة.</p></div><div class="privacy-badge">بيانات حساسة · للاستخدام الداخلي</div></div>
+<div id="stats" class="stats"></div>
+<div class="toolbar"><input id="searchInput" type="search" placeholder="ابحث بالمدينة، الجوال، البريد أو رقم الطلب"><select id="statusFilter"><option value="all">كل الحالات</option><option value="new">جديد</option><option value="screening">فرز</option><option value="qualified">مؤهل</option><option value="contacted">تم التواصل</option><option value="matched">تم الترشيح</option><option value="serious">جاد</option><option value="closed">مغلق</option><option value="rejected">مرفوض</option></select><select id="genderFilter"><option value="all">رجال ونساء</option><option value="man">رجال</option><option value="woman">نساء</option></select></div>
+<div id="resultsMeta" class="meta"></div><div id="applications" class="applications"></div>
+</section>
+</main>
+</div>
+<script type="module" src="./admin.js"></script>
+</body></html>
