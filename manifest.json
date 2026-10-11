@@ -1,0 +1,14 @@
+{
+  "name": "الخطّابة عهد | AHAD Private Matchmaking",
+  "short_name": "AHAD",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fbf8f1",
+  "theme_color": "#20251f",
+  "lang": "ar",
+  "dir": "rtl",
+  "description": "خدمة خاصة للتوفيق للزواج الجاد بخصوصية ومراجعة بشرية وموافقة الطرفين.",
+  "icons": [
+    {"src":"assets/icons/ahad-icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
