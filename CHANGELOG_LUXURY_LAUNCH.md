@@ -30,3 +30,5 @@
 - Added production indexes for application pipeline queries.
 - Updated service worker cache to v5 staff shell.
 - Public users cannot read `marriage_applications` through the publishable key (RLS verified).
+
+- Added immutable application activity audit trail (status, notes, assignment events) visible only to active staff.
