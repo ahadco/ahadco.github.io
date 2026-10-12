@@ -1,0 +1,17 @@
+{
+  "name": "ahad-production",
+  "private": true,
+  "version": "1.0.0",
+  "description": "AHAD private matchmaking production web app",
+  "scripts": {
+    "build": "esbuild app-core.js --bundle --format=iife --target=es2020 --outfile=app.bundle.js --minify && esbuild admin.js --bundle --format=iife --target=es2020 --outfile=admin.bundle.js --minify",
+    "check": "node --check landing.js && node --check cinematic.js && node --check app-core.js && node --check admin.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "2.57.4"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10",
+    "playwright": "1.55.1"
+  }
+}

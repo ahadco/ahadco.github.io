@@ -1,0 +1,44 @@
+/* AHAD production mobile hardening — 95% mobile traffic */
+@media (max-width:680px){
+  :root{--tap:56px}
+  html{scroll-padding-top:calc(76px + env(safe-area-inset-top));text-size-adjust:100%;-webkit-text-size-adjust:100%}
+  body{min-width:0;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+  .lux-header{height:calc(72px + env(safe-area-inset-top));min-height:72px;padding-top:env(safe-area-inset-top);padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right));background:rgba(251,248,241,.95)}
+  .lux-brand{gap:9px}.lux-brand b{font-size:22px}.lux-mark{width:40px;height:40px;flex:0 0 40px}
+  .lux-menu{width:var(--tap);height:var(--tap);min-width:var(--tap);min-height:var(--tap);font-size:26px;border-radius:14px}
+  .luxury-landing.nav-open .lux-nav{top:calc(72px + env(safe-area-inset-top));padding:18px max(20px,env(safe-area-inset-right)) 16px max(20px,env(safe-area-inset-left));gap:4px}
+  .luxury-landing.nav-open .lux-nav a{display:flex;align-items:center;min-height:52px;font-size:17px;border-bottom:1px solid rgba(90,75,56,.10)}
+  .luxury-landing.nav-open .lux-actions{top:calc(284px + env(safe-area-inset-top));padding:12px 20px 22px}
+  .lux-hero{padding:0 0 52px;background:linear-gradient(180deg,#ece0cf 0%,#f3eadc 72%,#fbf7ef 100%)}
+  .lux-hero-gallery{order:-1;width:100%;height:auto;min-height:0;aspect-ratio:4/5;border-radius:0;box-shadow:none;background:#dbcbb7}
+  .lux-photo-main img{object-position:50% 50%;filter:saturate(1.04) contrast(1.025)}
+  .lux-photo-main figcaption{left:max(12px,env(safe-area-inset-left));bottom:12px;max-width:calc(100% - 24px);white-space:normal}
+  .lux-hero-copy{width:100%;max-width:100%;padding:32px max(18px,env(safe-area-inset-right)) 0 max(18px,env(safe-area-inset-left));text-align:center;overflow:visible}
+  .lux-hero-copy .lux-kicker{font-size:10px;line-height:1.8;letter-spacing:.08em;margin-bottom:14px}
+  .lux-hero h1{font-size:clamp(30px,9vw,39px);line-height:1.16;letter-spacing:-.02em;width:100%;max-width:390px;margin:0 auto 18px;overflow:visible;overflow-wrap:normal;word-break:normal}
+  .lux-hero h1 em{display:block;font-size:.83em;margin-top:7px;line-height:1.2}
+  .lux-hero-copy>p{font-size:16px;line-height:1.9;max-width:410px;margin:0 auto 23px}
+  .lux-hero-actions{width:100%;gap:10px}.lux-hero-actions .lux-button,.lux-hero-actions .lux-ghost{min-height:58px;border-radius:14px;font-size:16px}
+  .lux-quiet{margin:19px auto 0;max-width:390px;grid-template-columns:1fr;gap:5px;text-align:center;font-size:11px}
+  .lux-trust{padding:12px max(16px,env(safe-area-inset-right)) 12px max(16px,env(safe-area-inset-left))}.lux-trust>div{min-height:78px;padding:14px 6px}.lux-trust b{font-size:16px}.lux-trust span{font-size:13px}
+  .lux-statement{padding-top:74px;padding-bottom:78px}.lux-statement h2,.lux-section-head h2,.lux-editorial h2,.lux-privacy h2,.lux-final h2{font-size:clamp(34px,9.6vw,40px);line-height:1.18}.lux-statement p{font-size:16px;line-height:1.95}
+  .cine-story-media,.lux-editorial figure{min-height:0;height:auto;aspect-ratio:4/5}.cine-story-media img,.lux-editorial figure img{object-position:center}
+  .cine-story-copy,.lux-editorial>div{padding:44px max(19px,env(safe-area-inset-right)) 54px max(19px,env(safe-area-inset-left))}.cine-story-copy h2,.cine-values-copy h2,.ahad-studio-head h2{font-size:clamp(34px,9.6vw,40px);line-height:1.18}.cine-story-copy p,.cine-values-copy p,.lux-editorial p{font-size:16px;line-height:1.9}
+  .lux-journey,.lux-privacy,.lux-paths,.lux-faq,.lux-final{padding-left:max(19px,env(safe-area-inset-left));padding-right:max(19px,env(safe-area-inset-right))}
+  .lux-steps article{padding:28px 4px 30px}.lux-steps h3{font-size:25px}.lux-steps p{font-size:15px}
+  .cine-values{min-height:72svh}.cine-values-media img{object-position:center}.cine-values-copy{padding:48px max(20px,env(safe-area-inset-right)) 60px max(20px,env(safe-area-inset-left))}
+  .lux-privacy-grid article{padding:24px 18px}.lux-path-cards article{padding:27px 20px;border-radius:14px}.lux-faq summary{min-height:64px;align-items:center;font-size:17px}
+  .ahad-studio{padding:64px 0 82px}.ahad-studio-head{padding:0 max(19px,env(safe-area-inset-right)) 24px max(19px,env(safe-area-inset-left))}.ahad-studio-track{gap:10px;padding-inline:10px;animation-duration:38s}.studio-card{width:74vw;height:98vw;max-height:520px;border-radius:22px}.studio-card.wide{width:88vw}.studio-card figcaption{font-size:11px;bottom:12px;left:12px}
+  .lux-button,.lux-link,.lux-ghost,button,a[role="button"]{touch-action:manipulation}
+  .lux-button{min-height:56px}.lux-button-lg{min-height:60px}.lux-dialog{width:100%;max-width:100%;max-height:96dvh;margin:auto 0 0;border-radius:26px 26px 0 0;padding-bottom:env(safe-area-inset-bottom)}
+  .lux-dialog-head{padding:42px max(20px,env(safe-area-inset-right)) 8px max(20px,env(safe-area-inset-left))}.lux-dialog form{padding:20px max(20px,env(safe-area-inset-right)) calc(34px + env(safe-area-inset-bottom)) max(20px,env(safe-area-inset-left))}.lux-form-grid{gap:14px}.lux-form-grid label{font-size:14px}.lux-form-grid input,.lux-form-grid select,.lux-form-grid textarea{font-size:16px;border-radius:12px}.lux-form-grid input,.lux-form-grid select{min-height:58px}.lux-form-grid textarea{min-height:120px}.lux-consent{font-size:14px}.lux-dialog-close{width:52px;height:52px}
+  .mobile-launch-cta{display:flex;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(calc(100% + 22px));transition:opacity .25s ease,transform .32s ease,visibility .25s;left:max(10px,env(safe-area-inset-left));right:max(10px,env(safe-area-inset-right));bottom:max(8px,env(safe-area-inset-bottom));padding:7px;border-radius:18px}
+  .mobile-launch-cta.is-active{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+  .mobile-launch-cta .lux-button{min-height:58px;border-radius:13px;font-size:17px}
+  .lux-footer{padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right));padding-bottom:calc(112px + env(safe-area-inset-bottom))}
+  .cine-story,.lux-journey,.lux-editorial,.cine-values,.lux-privacy,.lux-paths,.lux-faq,.ahad-studio,.lux-final{content-visibility:auto;contain-intrinsic-size:1px 900px}
+}
+@media(max-width:360px){.lux-hero-copy{padding-inline:16px}.lux-hero h1{font-size:30px;max-width:300px}.lux-brand b{font-size:20px}.lux-mark{width:38px;height:38px;flex-basis:38px}.studio-card{width:78vw}.studio-card.wide{width:91vw}}
+@media(max-width:330px){.lux-hero h1{font-size:28px;max-width:286px}.lux-hero-copy>p{font-size:15px}.lux-menu{width:50px;min-width:50px}.lux-header{padding-left:12px;padding-right:12px}}
+@media(min-width:681px){.mobile-launch-cta{display:none!important}}
+@media(prefers-reduced-motion:reduce){.mobile-launch-cta{transition:none}.lux-photo-main img{animation:none!important}.ahad-studio-track{animation:none!important;overflow-x:auto}}

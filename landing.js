@@ -22,19 +22,7 @@
     setTimeout(() => form?.elements?.age?.focus(), 80);
   }
 
-  function openAuth() {
-    landing?.classList.add('hidden');
-    auth?.classList.remove('hidden');
-    if (!$('#backToLanding') && $('.auth-card')) {
-      const back = document.createElement('button');
-      back.type = 'button';
-      back.id = 'backToLanding';
-      back.className = 'button soft wide';
-      back.textContent = 'العودة إلى موقع عهد';
-      $('.auth-card').appendChild(back);
-    }
-    $('#authEmail')?.focus();
-  }
+  function openAuth() { location.href = "./app.html"; }
 
   function backToLanding() {
     auth?.classList.add('hidden');
@@ -56,24 +44,21 @@
     e.currentTarget.setAttribute('aria-expanded', String(!!open));
   });
   $$('.lux-nav a').forEach(a => a.addEventListener('click', () => landing?.classList.remove('nav-open')));
-  $$('.open-apply, .open-auth').forEach(btn => btn.addEventListener('click', () => landing?.classList.remove('nav-open')));
-  window.addEventListener('resize', () => { if (window.innerWidth >= 1050) landing?.classList.remove('nav-open'); }, { passive: true });
 
-  // Lightweight reveal animation: disabled automatically for reduced-motion users.
-  const reveals = $$('.reveal');
-  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-    reveals.forEach(el => observer.observe(el));
-  } else {
-    reveals.forEach(el => el.classList.add('is-visible'));
-  }
+
+  const syncSeeking = () => {
+    if (!form) return;
+    const g = form.elements.gender?.value;
+    if (g === 'man') form.elements.seeking_gender.value = 'woman';
+    if (g === 'woman') form.elements.seeking_gender.value = 'man';
+    const married = form.elements.marital_status?.querySelector('option[value="married"]');
+    if (married) married.disabled = g === 'woman';
+    if (g === 'woman' && form.elements.marital_status?.value === 'married') form.elements.marital_status.value = '';
+  };
+  form?.elements?.gender?.addEventListener('change', syncSeeking);
+  syncSeeking();
+  if (location.hash === '#apply') setTimeout(() => openApply(document.querySelector('.open-apply')), 120);
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});
 
   form?.addEventListener('submit', async e => {
     e.preventDefault();
@@ -81,6 +66,11 @@
     const phone = String(fd.get('phone') || '').trim();
     const email = String(fd.get('email') || '').trim();
     const age = Number(fd.get('age'));
+    const gender = String(fd.get('gender') || '');
+    const countryCodeRaw = String(fd.get('country_code') || 'SA').toUpperCase();
+    const countryCode = countryCodeRaw === 'OTHER' ? 'SA' : countryCodeRaw;
+    const expectedSeeking = gender === 'man' ? 'woman' : gender === 'woman' ? 'man' : '';
+    if (expectedSeeking) form.elements.seeking_gender.value = expectedSeeking;
     const min = Number(fd.get('preferred_min_age') || 0) || null;
     const max = Number(fd.get('preferred_max_age') || 0) || null;
 
@@ -106,21 +96,22 @@
     }
 
     const payload = {
-      gender: fd.get('gender'),
+      gender,
+      country_code: countryCode,
       age,
       city: String(fd.get('city') || '').trim(),
       nationality: String(fd.get('nationality') || '').trim(),
       marital_status: fd.get('marital_status'),
       marriage_path: fd.get('marriage_path') === 'both' ? 'either' : fd.get('marriage_path'),
-      seeking_gender: fd.get('seeking_gender'),
+      seeking_gender: expectedSeeking || fd.get('seeking_gender'),
       phone: phone || null,
       email: email || null,
       short_intro: String(fd.get('intro') || '').trim() || null,
       preferred_age_min: min,
       preferred_age_max: max,
       source: 'website',
-      consent_privacy: fd.get('consent') === 'on',
-      consent_contact: fd.get('consent') === 'on',
+      consent_privacy: fd.get('consent_privacy') === 'on',
+      consent_contact: fd.get('consent_contact') === 'on',
       website: String(fd.get('website') || '').trim()
     };
 

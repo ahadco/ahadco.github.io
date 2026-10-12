@@ -1,9 +1,14 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#171b17">
-<title>لوحة الخطّابة عهد | AHAD</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; frame-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://ypnmnmsynmhrgidgwnve.supabase.co; media-src 'self' blob: https://ypnmnmsynmhrgidgwnve.supabase.co; connect-src 'self' https://ypnmnmsynmhrgidgwnve.supabase.co wss://ypnmnmsynmhrgidgwnve.supabase.co; worker-src 'self'; manifest-src 'self'; upgrade-insecure-requests">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#171b17">
+<title>لوحة فريق عهد | AHAD Staff</title>
+<link rel="icon" href="./assets/icons/ahad-icon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="./admin.css">
 </head>
 <body>
@@ -11,17 +16,31 @@
 <header class="top"><a href="./" class="brand"><span>ع</span><div><b>عهد</b><small>PRIVATE MATCHMAKING · STAFF</small></div></a><div class="top-actions"><span id="staffName"></span><button id="refreshBtn" class="ghost hidden">تحديث</button><button id="logoutBtn" class="ghost hidden">خروج</button></div></header>
 <main>
 <section id="loginView" class="login-card">
-<span class="kicker">STAFF ACCESS</span><h1>دخول فريق عهد</h1><p>هذه الصفحة مخصصة لأعضاء فريق عهد المعتمدين فقط.</p>
-<form id="loginForm"><label>البريد الإلكتروني<input id="email" type="email" autocomplete="email" required></label><label>كلمة المرور<input id="password" type="password" minlength="8" autocomplete="current-password" required></label><button class="primary" type="submit">دخول آمن</button><div id="loginStatus" class="status" role="status"></div></form>
+  <span class="kicker">STAFF ACCESS</span><h1>دخول فريق عهد</h1><p>هذه اللوحة تحتوي بيانات حساسة. يتطلب الدخول كلمة المرور والتحقق بخطوتين.</p>
+  <form id="loginForm"><label>البريد الإلكتروني<input id="email" type="email" autocomplete="email" required></label><label>كلمة المرور<input id="password" type="password" minlength="8" autocomplete="current-password" required></label><button class="primary" type="submit">دخول آمن</button><button id="staffForgot" class="ghost wide" type="button">نسيت كلمة المرور</button><div id="loginStatus" class="status" role="status" aria-live="polite"></div></form>
 </section>
+
+<section id="mfaView" class="login-card hidden">
+  <span class="kicker">MFA REQUIRED</span><h1>تحقق أمني إضافي</h1><p id="mfaText">أدخل الرمز المكون من 6 أرقام من تطبيق المصادقة.</p>
+  <div id="mfaEnroll" class="hidden"><img id="mfaQr" class="mfa-qr" alt="رمز QR لإضافة عهد إلى تطبيق المصادقة"><p>المفتاح اليدوي: <code id="mfaSecret"></code></p></div>
+  <form id="mfaForm"><label>رمز التحقق<input id="mfaCode" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]{6}" required></label><button class="primary" type="submit">تحقق وادخل</button><div id="mfaStatus" class="status" role="status" aria-live="polite"></div></form>
+</section>
+
 <section id="dashboardView" class="hidden">
-<div class="hero"><div><span class="kicker">MATCHMAKER CONTROL CENTER</span><h1>لوحة الخطّابة</h1><p>فرز الطلبات، التأهيل، التواصل، المطابقة، ومتابعة الحالات الجادة.</p></div><div class="privacy-badge">بيانات حساسة · للاستخدام الداخلي</div></div>
-<div id="stats" class="stats"></div>
-<div class="toolbar"><input id="searchInput" type="search" placeholder="ابحث بالمدينة، الجوال، البريد أو رقم الطلب"><select id="statusFilter"><option value="all">كل الحالات</option><option value="new">جديد</option><option value="screening">فرز</option><option value="qualified">مؤهل</option><option value="contacted">تم التواصل</option><option value="matched">تم الترشيح</option><option value="serious">جاد</option><option value="closed">مغلق</option><option value="rejected">مرفوض</option></select><select id="genderFilter"><option value="all">رجال ونساء</option><option value="man">رجال</option><option value="woman">نساء</option></select></div>
-<div id="resultsMeta" class="meta"></div><div id="applications" class="applications"></div>
+  <div class="hero"><div><span class="kicker">MATCHMAKER CONTROL CENTER</span><h1>لوحة الخطّابة عهد</h1><p>طلبات الزواج وملفات الأعضاء لا تُحمّل إلا بالقدر اللازم، وبيانات التواصل تظهر فقط عند فتح الطلب.</p></div><div class="privacy-badge">MFA · أقل قدر من البيانات · سجل تدقيق</div></div>
+  <div id="stats" class="stats"></div>
+  <div class="admin-tabs"><button class="tab active" data-tab="applications">طلبات الزواج</button><button class="tab" data-tab="profiles">اعتماد ملفات الأعضاء</button></div>
+
+  <section id="applicationsPanel">
+    <div class="toolbar"><input id="searchInput" type="search" placeholder="بحث بالمدينة أو رقم الطلب"><select id="statusFilter"><option value="all">كل الحالات</option><option value="new">جديد</option><option value="screening">فرز</option><option value="qualified">مؤهل</option><option value="contacted">تم التواصل</option><option value="matched">تم الترشيح</option><option value="serious">جاد</option><option value="closed">مغلق</option><option value="rejected">مرفوض</option></select><select id="genderFilter"><option value="all">رجال ونساء</option><option value="man">رجال</option><option value="woman">نساء</option></select></div>
+    <div id="resultsMeta" class="meta"></div><div id="applications" class="applications"></div><div class="pager"><button id="prevPage" class="ghost">السابق</button><span id="pageMeta"></span><button id="nextPage" class="ghost">التالي</button></div>
+  </section>
+
+  <section id="profilesPanel" class="hidden"><div class="meta">الحساب لا يدخل Discover قبل الاعتماد. الافتراضي: غير ظاهر، الاتصال مخفي، والمكالمات متوقفة.</div><div id="pendingProfiles" class="applications"></div></section>
 </section>
 </main>
 </div>
-<dialog id="historyDialog" class="history-dialog"><button id="historyClose" class="dialog-close" type="button">×</button><div id="historyContent"></div></dialog>
-<script type="module" src="./admin.js"></script>
-</body></html>
+<dialog id="detailDialog" class="history-dialog"><button id="detailClose" class="dialog-close" type="button" aria-label="إغلاق">×</button><div id="detailContent"></div></dialog>
+<script src="./admin.bundle.js" defer></script>
+</body>
+</html>

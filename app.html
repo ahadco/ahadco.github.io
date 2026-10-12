@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; frame-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://ypnmnmsynmhrgidgwnve.supabase.co; media-src 'self' blob: https://ypnmnmsynmhrgidgwnve.supabase.co; connect-src 'self' https://ypnmnmsynmhrgidgwnve.supabase.co wss://ypnmnmsynmhrgidgwnve.supabase.co; worker-src 'self'; manifest-src 'self'; upgrade-insecure-requests">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#20251f">
+<title>مساحة أعضاء عهد | AHAD</title>
+<link rel="icon" href="./assets/icons/ahad-icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="./styles.css">
+<link rel="stylesheet" href="./luxury.css">
+<link rel="stylesheet" href="./app-core.css">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+<div id="boot" class="boot"><div class="logo-glyph">ع</div><b>عهد</b><small>AHAD</small></div>
+
+<section id="authView" class="auth-view hidden">
+  <div class="auth-visual">
+    <a href="./" class="brand-lockup" aria-label="العودة إلى عهد"><div class="logo-glyph">ع</div><div><b>الخطّابة عهد</b><small>AHAD · PRIVATE MATCHMAKING</small></div></a>
+    <div class="auth-hero">
+      <span class="eyebrow">مساحة خاصة للجادين</span>
+      <h1>دخول الأعضاء<br>المعتمدين.</h1>
+      <p>الحسابات في عهد تُفعّل بعد المراجعة. إذا لم يكن لديك حساب معتمد، ابدأ بطلب زواج من الصفحة الرئيسية.</p>
+      <div class="auth-chips"><span>18+ فقط</span><span>خصوصية افتراضية</span><span>موافقة متبادلة</span><span>للزواج الجاد</span></div>
+    </div>
+  </div>
+  <div class="auth-panel">
+    <form id="authForm" class="glass-card auth-card">
+      <span class="eyebrow">أهلًا بك في عهد</span>
+      <h2>مرحبًا بعودتك.</h2>
+      <p>ادخل إلى مساحتك الخاصة.</p>
+      <label>البريد الإلكتروني<input id="authEmail" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+      <label>كلمة المرور<input id="authPassword" type="password" minlength="8" autocomplete="current-password" required placeholder="••••••••"></label>
+      <button id="authSubmit" class="button primary wide" type="submit">تسجيل الدخول</button>
+      <button id="forgotPassword" class="button soft wide" type="button">نسيت كلمة المرور</button>
+      <a class="button soft wide auth-home-link" href="./#apply">ابدأ بطلب زواج</a>
+      <small class="fine">إنشاء الحسابات الجديدة يتم بعد مراجعة طلب الزواج واعتماد الملف.</small>
+    </form>
+  </div>
+</section>
+
+<section id="onboarding" class="onboarding hidden">
+  <form id="onboardingForm" class="onboarding-card">
+    <div class="onboarding-head"><div class="logo-glyph">ع</div><div><span class="eyebrow">ملف عهد</span><h2>أكمل ملفك للمراجعة.</h2><p>سيبقى ملفك غير ظاهر حتى اعتماد فريق عهد. الخصوصية هي الإعداد الافتراضي.</p></div></div>
+    <div class="form-grid">
+      <label>الاسم الظاهر<input name="display_name" maxlength="80" required></label>
+      <label>اسم المستخدم<input name="username" minlength="3" maxlength="30" pattern="[A-Za-z0-9_.-]+" required placeholder="ahad_user"></label>
+      <label>تاريخ الميلاد<input name="birth_date" type="date" required></label>
+      <label>أنا<select name="gender" required><option value="">اختر</option><option value="man">رجل</option><option value="woman">امرأة</option></select></label>
+      <label>الدولة<select name="country_code" required><option value="SA" selected>السعودية</option><option value="AE">الإمارات</option><option value="KW">الكويت</option><option value="QA">قطر</option><option value="BH">البحرين</option><option value="OM">عُمان</option><option value="OTHER">دولة أخرى</option></select></label>
+      <label>المدينة<input name="city" placeholder="جدة" required></label>
+      <label>الجنسية<input name="nationality"></label>
+      <label>الخلفية الدينية<input name="religion" placeholder="اختياري"></label>
+      <label>نيتي<select name="intent" required><option value="marriage" selected>جاهز للزواج</option><option value="serious">جاد وأستعد للزواج</option></select></label>
+      <label>مسار الزواج<select name="marriage_preference"><option value="official">زواج رسمي</option><option value="misyar">مسيار حيث ينطبق</option><option value="discuss" selected>نناقشه مع الخطّابة</option></select></label>
+      <label>الممارسة الدينية<select name="faith_style"><option>ملتزم</option><option selected>متوازن</option><option>روحي</option><option>أفضل عدم التصنيف</option></select></label>
+      <label>أسلوب الحياة<select name="lifestyle_style"><option>محافظ</option><option selected>متوازن</option><option>اجتماعي</option><option>منفتح باعتدال</option><option>عالمي</option></select></label>
+      <label>العقلية الثقافية<select name="culture_style"><option>محلية</option><option selected>عربية معاصرة</option><option>دولية</option><option>متعددة الثقافات</option></select></label>
+      <label>المظهر / الستايل<input name="appearance_style" placeholder="اختياري"></label>
+      <label>العمر المفضل من<input name="preferred_min_age" type="number" min="18" max="90" value="25"></label>
+      <label>إلى<input name="preferred_max_age" type="number" min="18" max="90" value="50"></label>
+      <label class="span2">الاهتمامات<input name="interests" placeholder="سفر، قهوة، رياضة، فن، كتب..."></label>
+      <label class="span2">نبذة<textarea name="bio" maxlength="1000" placeholder="أخبرنا عنك باختصار..."></textarea></label>
+    </div>
+    <div class="preference-box"><h3>إعدادات الخصوصية الافتراضية</h3><label class="toggle"><input type="checkbox" name="blur_photos_until_match" checked><span></span> عدم إتاحة صورتي الأصلية قبل التوافق المتبادل</label><label class="toggle"><input type="checkbox" name="show_online"><span></span> إظهار حالة الاتصال</label><label class="toggle"><input type="checkbox" name="allow_calls"><span></span> السماح بالمكالمات بعد التوافق</label></div>
+    <button class="button primary" type="submit">إرسال الملف للمراجعة</button>
+  </form>
+</section>
+
+<section id="approvalView" class="approval-view hidden">
+  <div class="approval-card">
+    <div class="logo-glyph">ع</div><span class="eyebrow">مراجعة بشرية</span><h1>ملفك قيد المراجعة.</h1><p id="approvalMessage">لن يظهر ملفك ولن تدخل مساحة الاكتشاف حتى يعتمد فريق عهد طلبك.</p><div class="approval-actions"><button id="refreshApproval" class="button primary">تحقق من حالة الاعتماد</button><button id="approvalLogout" class="button soft">تسجيل الخروج</button></div>
+  </div>
+</section>
+
+<div id="app" class="app hidden">
+  <aside class="sidebar">
+    <button class="brand-lockup brand-button nav-action" data-page="home"><div class="logo-glyph">ع</div><div><b>عهد</b><small>AHAD</small></div></button>
+    <nav id="desktopNav"></nav>
+    <div class="sidebar-bottom"><button class="nav-item nav-action" data-page="profile"><i>○</i><span>ملفي</span></button></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><small id="pageEyebrow" class="eyebrow">AHAD</small><h1 id="pageTitle">الرئيسية</h1></div><div class="top-actions"><button id="searchButton" class="round-button" aria-label="بحث">⌕</button><button id="notificationButton" class="round-button" aria-label="الإشعارات">♡ <em id="notificationBadge" class="notify-badge hidden">0</em></button><button id="matchmakerButton" class="matchmaker-button">رحلة الزواج</button></div></header>
+    <section id="view" class="view"></section>
+  </main>
+  <aside class="rightbar"><div id="currentUserCard"></div><div class="right-title"><b>ترشيحات مناسبة</b><button class="text-button nav-action" data-page="discover">عرض الكل</button></div><div id="rightSuggestions"></div><article class="khattaba-card"><span>الخطّابة عهد</span><h3>النية الواضحة أول الطريق.</h3><p>بعد التوافق المتبادل، تنتقل العلاقة إلى محادثة موجّهة ثم رحلة الزواج.</p><button class="button paper nav-action" data-page="serious">رحلة الزواج</button></article></aside>
+  <nav id="mobileNav" class="mobile-nav" aria-label="التنقل الرئيسي"></nav>
+</div>
+
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle"></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<input id="profileMediaInput" type="file" accept="image/jpeg,image/png,image/webp" class="hidden">
+<input id="chatMediaInput" type="file" accept="image/jpeg,image/png,image/webp,video/mp4" class="hidden">
+<script src="./app.bundle.js" defer></script>
+</body>
+</html>
