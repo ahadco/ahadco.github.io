@@ -61,10 +61,10 @@ img{max-width:100%;height:auto}
 @media(max-width:699px){
   .luxury-landing{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
   .lux-header{grid-template-columns:minmax(0,1fr) var(--touch);padding-top:max(10px,env(safe-area-inset-top));min-height:calc(76px + env(safe-area-inset-top))}
-  .lux-brand{max-width:calc(100vw - 96px);width:100%;overflow:hidden}.lux-brand>span:last-child{overflow:hidden}.lux-brand b{font-size:18px;overflow:hidden;text-overflow:ellipsis}.lux-brand small{display:none}
+  .lux-header{direction:rtl}.lux-brand{max-width:calc(100vw - 88px);width:auto;min-width:0;overflow:visible;direction:rtl;justify-self:start}.lux-brand>span:last-child{min-width:0;overflow:visible}.lux-brand b{font-size:18px;overflow:visible;text-overflow:clip}.lux-brand small{display:none}
   .luxury-landing.nav-open .lux-nav{top:calc(76px + env(safe-area-inset-top))}
   .luxury-landing.nav-open .lux-actions{top:calc(350px + env(safe-area-inset-top))}
-  .cin-hero-copy{overflow:hidden;width:calc(100% - 28px);max-width:none}
+  .cin-hero-copy{overflow:visible;width:calc(100% - 28px);max-width:none;direction:rtl;text-align:right}
   .cin-hero h1{font-size:34px;line-height:1.16;letter-spacing:-.025em;overflow-wrap:normal}
   .cin-hero p{font-size:16.5px;line-height:1.9}
   .cin-hero-actions .lux-button,.cin-hero-actions .lux-ghost{width:100%;box-sizing:border-box}
@@ -73,7 +73,7 @@ img{max-width:100%;height:auto}
   .lux-dialog[open]~.cin-mobile-cta{display:none}
   .cin-portrait-grid figure,.cin-track figure{contain:layout paint}
 }
-@media(min-width:361px) and (max-width:430px){.cin-hero h1{font-size:clamp(35px,9.2vw,39px)}.cin-hero-copy{padding-inline:18px}.cin-proof span{font-size:10.5px}}
+@media(min-width:361px) and (max-width:430px){.cin-hero h1{font-size:clamp(34px,8.7vw,37px)}.cin-hero-copy{padding-inline:18px}.cin-proof span{font-size:10.5px}}
 @media(max-width:360px){.cin-hero h1{font-size:34px}.cin-hero-copy{margin-inline:8px;padding-inline:14px;max-width:calc(100% - 16px)}.cin-hero-copy>p{font-size:16px}.cin-proof{gap:5px}.cin-proof span{padding:7px 9px;font-size:10px}}
 @media(max-width:330px){.lux-mark{width:34px;height:34px}.lux-brand b{font-size:17px}.cin-hero h1{font-size:32px}.cin-mobile-cta{right:max(6px,env(safe-area-inset-right));left:max(6px,env(safe-area-inset-left))}}
 @media(min-width:700px){.cin-hero h1 em{display:block}.cin-mobile-cta{display:none!important}}
