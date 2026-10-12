@@ -56,6 +56,24 @@
     e.currentTarget.setAttribute('aria-expanded', String(!!open));
   });
   $$('.lux-nav a').forEach(a => a.addEventListener('click', () => landing?.classList.remove('nav-open')));
+  $$('.open-apply, .open-auth').forEach(btn => btn.addEventListener('click', () => landing?.classList.remove('nav-open')));
+  window.addEventListener('resize', () => { if (window.innerWidth >= 1050) landing?.classList.remove('nav-open'); }, { passive: true });
+
+  // Lightweight reveal animation: disabled automatically for reduced-motion users.
+  const reveals = $$('.reveal');
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    reveals.forEach(el => observer.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('is-visible'));
+  }
 
   form?.addEventListener('submit', async e => {
     e.preventDefault();

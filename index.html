@@ -12,8 +12,10 @@
 <meta property="og:title" content="الخطّابة عهد | AHAD Private Matchmaking">
 <meta property="og:description" content="توفيق خاص للزواج الجاد بخصوصية ومراجعة بشرية وموافقة الطرفين.">
 <meta property="og:url" content="https://ahadco.github.io/">
-<meta property="og:image" content="https://ahadco.github.io/assets/editorial/woman-navy.jpg">
+<meta property="og:image" content="https://ahadco.github.io/assets/ahad/hero-wedding-720.webp">
 <link rel="manifest" href="./manifest.webmanifest">
+<link rel="preload" as="image" href="./assets/ahad/hero-wedding-360.webp" imagesrcset="./assets/ahad/hero-wedding-360.webp 360w, ./assets/ahad/hero-wedding-720.webp 720w" imagesizes="(max-width:699px) 100vw, 54vw" fetchpriority="high">
+<script>document.documentElement.classList.add('js')</script>
 <link rel="icon" href="./assets/icons/ahad-icon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="./styles.css">
 <link rel="stylesheet" href="./luxury.css">
@@ -22,49 +24,85 @@
 <div id="boot" class="boot hidden"><div class="logo-glyph">ع</div><b>عهد</b><small>AHAD</small></div>
 
 <section id="landingView" class="luxury-landing" aria-label="الخطّابة عهد">
-  <header class="lux-header">
-    <a class="lux-brand" href="#top" aria-label="عهد - الرئيسية"><span class="lux-mark">ع</span><span><b>عهد</b><small>AHAD · PRIVATE MATCHMAKING</small></span></a>
-    <nav class="lux-nav" aria-label="التنقل الرئيسي"><a href="#philosophy">عن عهد</a><a href="#journey">كيف تعمل</a><a href="#privacy">الخصوصية</a><a href="#faq">الأسئلة</a></nav>
-    <div class="lux-actions"><button class="lux-link open-auth" type="button">دخول الأعضاء</button><button class="lux-button open-apply" type="button">قدّم طلب زواج</button></div>
-    <button id="luxMenu" class="lux-menu" type="button" aria-label="القائمة" aria-expanded="false">☰</button>
+  <header class="lux-header" id="siteHeader">
+    <a class="lux-brand" href="#top" aria-label="عهد - الرئيسية"><span class="lux-mark">ع</span><span><b>الخطّابة عهد</b><small>AHAD · PRIVATE MATCHMAKING</small></span></a>
+    <nav class="lux-nav" aria-label="التنقل الرئيسي"><a href="#philosophy">عن عهد</a><a href="#journey">كيف تعمل</a><a href="#privacy">الخصوصية</a><a href="#studio">استوديو عهد</a><a href="#faq">الأسئلة</a></nav>
+    <div class="lux-actions"><button class="lux-link open-auth" type="button">دخول الأعضاء</button><button class="lux-button open-apply" type="button">ابدأ طلبك</button></div>
+    <button id="luxMenu" class="lux-menu" type="button" aria-label="فتح القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
   </header>
 
   <main id="top">
-    <section class="lux-hero">
-      <div class="lux-hero-copy">
-        <span class="lux-kicker">خصوصية · اختيار واعٍ · زواج جاد</span>
-        <h1>حين تكون نيتك واضحة،<br><em>يستحق اختيارك عناية أكبر.</em></h1>
-        <p>عهد خدمة خاصة للتوفيق للزواج الجاد، تجمع بين الاكتشاف الرقمي والمراجعة البشرية والترشيح بعناية — مع احترام القيم، الخصوصية، وموافقة الطرفين.</p>
-        <div class="lux-hero-actions"><button class="lux-button lux-button-lg open-apply" type="button">ابدأ طلبك بسرية</button><a class="lux-ghost" href="#journey">اعرف كيف تعمل عهد</a></div>
-        <div class="lux-quiet"><span>للجادين فقط</span><span>مراجعة بشرية</span><span>لا تُعرض الملفات ككتالوج عام</span></div>
+    <section class="cin-hero" aria-labelledby="heroTitle">
+      <div class="cin-hero-media">
+        <picture><source media="(min-resolution:1.5dppx)" srcset="./assets/ahad/hero-wedding-720.webp"><img src="./assets/ahad/hero-wedding-360.webp" width="360" height="240" alt="مشهد تعبيري لحفل زواج سعودي" fetchpriority="high" decoding="sync"></picture>
+        <div class="cin-film-grain" aria-hidden="true"></div>
+        <span class="cin-image-note">صور تعبيرية · ليست ملفات أعضاء</span>
       </div>
-      <div class="lux-hero-gallery" aria-label="صور تعبيرية لهوية عهد">
-        <figure class="lux-photo lux-photo-main"><img src="./assets/editorial/woman-navy.jpg" alt="صورة تعبيرية لامرأة بالغة بإطلالة أنيقة" fetchpriority="high"><figcaption>صور تعبيرية · ليست ملفات أعضاء</figcaption></figure>
-        <figure class="lux-photo lux-photo-side"><img src="./assets/editorial/man-suit.jpg" alt="صورة تعبيرية لرجل بالغ بإطلالة رسمية" fetchpriority="high"></figure>
-        <figure class="lux-photo lux-photo-mini"><img src="./assets/editorial/man-thobe.jpg" alt="صورة تعبيرية لرجل بالغ بزي عربي" loading="lazy"></figure>
+      <div class="cin-hero-copy">
+        <span class="lux-kicker">خصوصية · اختيار واعٍ · زواج جاد</span>
+        <h1 id="heroTitle">تعارف بنية الزواج،<br><em>بإشراف الخطّابة عهد.</em></h1>
+        <p>رحلة خاصة ومحترمة للبالغين الجادين في الزواج الرسمي أو المسيار حيث ينطبق، تبدأ بفهمك ثم مراجعة بشرية وترشيح بعناية وموافقة متبادلة.</p>
+        <div class="cin-hero-actions"><button class="lux-button lux-button-lg open-apply" type="button">ابدأ طلبك بسرية</button><a class="lux-ghost" href="#journey">كيف تعمل عهد؟</a></div>
+        <div class="cin-proof"><span>بيانات غير عامة</span><span>مراجعة بشرية</span><span>قرار مستقل لكل طرف</span></div>
       </div>
     </section>
 
-    <section class="lux-trust" aria-label="مبادئ عهد"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 7v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7l8-4Z"/><path d="m9 12 2 2 4-5"/></svg><b>خصوصية عالية</b><span>بياناتك لا تُعرض للعامة.</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-4 2-6 6-6s6 2 6 6M17 7h4M19 5v4"/></svg><b>مراجعة بشرية</b><span>الخطّابة تراجع الطلبات والترشيحات.</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 12c2-4 8-4 10 0-2 4-8 4-10 0Z"/><circle cx="12" cy="12" r="1.5"/></svg><b>موافقة متبادلة</b><span>لا مشاركة حساسة دون موافقة مناسبة.</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 9 17 20 6"/></svg><b>للجادين فقط</b><span>الهدف علاقة شرعية طويلة الأمد.</span></div></section>
+    <section class="cin-trust" aria-label="مبادئ عهد">
+      <article><i>01</i><b>خصوصية أولًا</b><span>لا كتالوج عام للملفات أو البيانات الحساسة.</span></article>
+      <article><i>02</i><b>إنسان قبل الخوارزمية</b><span>المراجعة والترشيح بإشراف بشري.</span></article>
+      <article><i>03</i><b>نية واضحة</b><span>الخدمة موجهة للزواج والاستقرار.</span></article>
+    </section>
 
-    <section id="philosophy" class="lux-statement"><span class="lux-kicker">AHAD PHILOSOPHY</span><h2>لا تحتاج خيارات أكثر.<br>تحتاج <em>اختيارًا أنسب.</em></h2><p>عهد ليست تطبيق تمرير عشوائي. نبدأ بفهم الشخص، نمط حياته، ظروفه، وما يبحث عنه فعلًا؛ ثم نرتب رحلة أكثر هدوءًا واحترامًا باتجاه الزواج والاستقرار.</p></section>
+    <section id="philosophy" class="cin-manifesto reveal">
+      <span class="lux-kicker">AHAD PHILOSOPHY</span>
+      <h2>لا تحتاج خيارات أكثر.<br>تحتاج <em>اختيارًا أنسب.</em></h2>
+      <p>عهد ليست تطبيق تمرير عشوائي. نرتب رحلة أكثر هدوءًا وخصوصية تبدأ بالنية والظروف والقيم ونمط الحياة، ثم ننتقل إلى الترشيح والتعارف المنظم عند وجود توافق حقيقي.</p>
+    </section>
 
-    <section id="journey" class="lux-journey"><div class="lux-section-head"><span class="lux-kicker">رحلة واضحة</span><h2>ثلاث مراحل، دون تعقيد.</h2></div><div class="lux-steps"><article><span>01</span><h3>عرّفنا عليك</h3><p>طلب مختصر يوضح العمر، المدينة، الحالة الاجتماعية، نوع الزواج والتفضيلات الأساسية.</p></article><article><span>02</span><h3>مراجعة وترشيح</h3><p>تراجع الخطّابة الطلب، مستوى الجدية والتوافق، ثم تُعرض الترشيحات المناسبة وفق الخصوصية.</p></article><article><span>03</span><h3>تعارف موجّه</h3><p>عند القبول المتبادل يبدأ تعارف محترم، ثم ينتقل الجادون إلى الأسرة أو الخطوات الرسمية والعقد.</p></article></div></section>
+    <section id="journey" class="cin-split cin-split-dark reveal">
+      <figure class="cin-split-media"><picture><source srcset="./assets/ahad/majlis-session-720.webp 2x"><img src="./assets/ahad/majlis-session-360.webp" width="360" height="240" alt="مشهد تعبيري لجلسة تعارف محترمة" loading="lazy" decoding="async"></picture></figure>
+      <div class="cin-split-copy"><span class="lux-kicker">رحلة واضحة</span><h2>من الطلب إلى التعارف الجاد، خطوة بخطوة.</h2><ol class="cin-steps"><li><b>عرّفنا عليك</b><span>طلب أولي مختصر وواضح.</span></li><li><b>مراجعة وترشيح</b><span>فهم الجدية والتفضيلات والتوافق.</span></li><li><b>قبول متبادل</b><span>لا انتقال دون موافقة الطرفين.</span></li><li><b>تعارف موجّه</b><span>ثم الأسرة أو الخطوات الرسمية عند التوافق.</span></li></ol><button class="lux-button open-apply" type="button">ابدأ الآن</button></div>
+    </section>
 
-    <section class="lux-editorial lux-editorial-men"><figure><img src="./assets/editorial/man-suit.jpg" alt="صورة تعبيرية لرجل بالغ" loading="lazy"></figure><div><span class="lux-kicker">للرجال الجادين</span><h2>وقتك ومعاييرك لهما قيمة.</h2><p>بدل البحث العشوائي، تبدأ عهد بفهم ظروفك وتفضيلاتك والاستعداد الحقيقي للزواج، ثم تركّز على ترشيحات أقرب لما يناسبك.</p><button class="lux-button open-apply" type="button" data-gender="man">قدّم طلب رجل</button></div></section>
+    <section class="cin-portraits reveal" aria-label="نماذج بصرية لهوية عهد">
+      <div class="cin-section-head"><span class="lux-kicker">HUMAN. PRIVATE. INTENTIONAL.</span><h2>وجوه ناضجة، تجربة راقية،<br>وخصوصية لا تُساوَم.</h2><p>هذه الصور تعبيرية لهوية عهد ولا تمثل أعضاء حقيقيين.</p></div>
+      <div class="cin-portrait-grid">
+        <figure><picture><source srcset="./assets/ahad/man-profile-720.webp 2x"><img src="./assets/ahad/man-profile-360.webp" width="360" height="240" alt="صورة تعبيرية لرجل سعودي بالغ" loading="lazy" decoding="async"></picture><figcaption>للرجال الجادين <button class="text-cta open-apply" type="button" data-gender="man">قدّم طلبك</button></figcaption></figure>
+        <figure><picture><source srcset="./assets/ahad/woman-profile-720.webp 2x"><img src="./assets/ahad/woman-profile-360.webp" width="360" height="240" alt="صورة تعبيرية لامرأة عربية بالغة بإطلالة محتشمة" loading="lazy" decoding="async"></picture><figcaption>للنساء الجادات <button class="text-cta open-apply" type="button" data-gender="woman">قدّمي طلبك</button></figcaption></figure>
+      </div>
+    </section>
 
-    <section class="lux-editorial lux-editorial-women"><figure><img src="./assets/editorial/woman-hijab.jpg" alt="صورة تعبيرية لامرأة بالغة بإطلالة محتشمة" loading="lazy"></figure><div><span class="lux-kicker">للنساء الجادات</span><h2>كرامتك وخصوصيتك قبل أي ترشيح.</h2><p>لا تُنشر ملفات النساء أو وسائل التواصل للعامة. التقديم والمراجعة والترشيح تتم بمراحل واضحة، مع استقلال قرار القبول لكل طرف.</p><button class="lux-button lux-button-dark open-apply" type="button" data-gender="woman">قدّمي طلب زواج</button></div></section>
+    <section class="cin-fullbleed reveal">
+      <picture><source srcset="./assets/ahad/couple-stroll-720.webp 2x"><img src="./assets/ahad/couple-stroll-360.webp" width="360" height="240" alt="مشهد تعبيري لزوجين عربيين في أجواء راقية" loading="lazy" decoding="async"></picture>
+      <div class="cin-fullbleed-overlay"><span class="lux-kicker">قيم مشتركة · حياة أوضح</span><h2>التوافق الحقيقي أعمق من صورة وفلتر.</h2><p>ننظر إلى القيم، الاستعداد، الظروف، نمط الحياة والتفضيلات، مع بقاء القرار النهائي لكل طرف.</p></div>
+    </section>
 
-    <section id="privacy" class="lux-privacy"><div><span class="lux-kicker">DISCRETION BY DESIGN</span><h2>الخصوصية ليست ميزة إضافية.<br>هي أساس الخدمة.</h2></div><div class="lux-privacy-grid"><article><b>01</b><h3>أقل قدر من البيانات</h3><p>لا نطلب هوية وطنية أو معلومات بنكية في نموذج البداية.</p></article><article><b>02</b><h3>لا كتالوج عام</h3><p>الصور والبيانات الخاصة ليست معرضًا مفتوحًا للمتصفحين.</p></article><article><b>03</b><h3>تحكم وموافقة</h3><p>الانتقال بين المراحل يتم بوضوح وموافقة مستقلة من الطرفين.</p></article></div></section>
+    <section id="privacy" class="cin-split cin-privacy reveal">
+      <figure class="cin-split-media"><picture><source srcset="./assets/ahad/privacy-niqab-720.webp 2x"><img src="./assets/ahad/privacy-niqab-360.webp" width="360" height="240" alt="صورة تعبيرية لامرأة عربية بالغة تعبر عن الخصوصية" loading="lazy" decoding="async"></picture></figure>
+      <div class="cin-split-copy"><span class="lux-kicker">DISCRETION BY DESIGN</span><h2>الخصوصية ليست إضافة.<br>هي أساس الخدمة.</h2><div class="cin-privacy-points"><article><b>أقل قدر من البيانات</b><p>لا نطلب هوية وطنية أو بيانات بنكية في نموذج البداية.</p></article><article><b>لا عرض عام</b><p>لا تُعرض الملفات الحساسة ككتالوج مفتوح للجمهور.</p></article><article><b>موافقة وتحكم</b><p>مشاركة المعلومات والانتقال بين المراحل وفق الحاجة والموافقة.</p></article></div></div>
+    </section>
 
-    <section class="lux-paths"><div class="lux-section-head"><span class="lux-kicker">مسارات الزواج</span><h2>رسمي أو مسيار — بوضوح واحترام.</h2><p>تستقبل عهد طلبات الزواج الرسمي والمسيار للبالغين، مع مراعاة الضوابط الشرعية والمتطلبات النظامية المطبقة على كل حالة. عهد لا تضمن إتمام الزواج ولا تقدم استشارة شرعية أو قانونية.</p></div><div class="lux-path-cards"><article><span>01</span><h3>الزواج الرسمي</h3><p>مسار نحو التعارف الجاد ثم الانتقال إلى الأسرة والإجراءات الرسمية عند توافق الطرفين.</p></article><article><span>02</span><h3>المسيار</h3><p>يُتعامل معه كمسار زواج جاد حيث يكون مناسبًا ومستوفيًا للمتطلبات ذات الصلة، وليس كعلاقة عابرة.</p></article></div></section>
+    <section class="cin-paths reveal">
+      <span class="lux-kicker">مسارات الزواج</span><h2>رسمي أو مسيار —<br><em>بوضوح واحترام.</em></h2>
+      <div class="cin-path-grid"><article><span>01</span><h3>الزواج الرسمي</h3><p>تعارف جاد ثم الانتقال إلى الأسرة والإجراءات الرسمية عند القبول والتوافق.</p></article><article><span>02</span><h3>المسيار</h3><p>مسار زواج جاد حيث يكون مناسبًا ومستوفيًا للضوابط والمتطلبات ذات الصلة، وليس علاقة عابرة.</p></article></div>
+      <p class="cin-disclaimer">عهد لا تضمن إتمام الزواج ولا تقدم استشارة شرعية أو قانونية؛ القبول النهائي حق مستقل لكل طرف.</p>
+    </section>
 
-    <section id="faq" class="lux-faq"><div class="lux-section-head"><span class="lux-kicker">أسئلة شائعة</span><h2>قبل أن تبدأ.</h2></div><div class="lux-faq-list"><details><summary>هل تظهر بياناتي أو صوري للجميع؟</summary><p>لا. فلسفة عهد قائمة على الحد من العرض العام للبيانات الحساسة، ومشاركة ما يلزم فقط بحسب المرحلة والموافقة.</p></details><details><summary>هل تقديم الطلب يعني ضمان الزواج؟</summary><p>لا. التقديم والترشيح لا يعنيان ضمان الزواج؛ القرار النهائي مستقل لكل طرف ويعتمد على التوافق والقبول.</p></details><details><summary>هل يمكن التسجيل للزواج الرسمي أو المسيار؟</summary><p>نعم، يمكن تحديد المسار المطلوب في الطلب، مع مراعاة الضوابط الشرعية والنظامية المطبقة.</p></details><details><summary>هل أحتاج حسابًا لتقديم طلب أولي؟</summary><p>لا. يمكنك إرسال الطلب الأولي مباشرة، ثم تتواصل معك عهد عند اجتياز مرحلة المراجعة المناسبة.</p></details></div></section>
+    <section id="studio" class="cin-studio reveal" aria-labelledby="studioTitle">
+      <div class="cin-section-head"><span class="lux-kicker">AHAD STUDIO</span><h2 id="studioTitle">استوديو عهد</h2><p>مشاهد تعبيرية لهوية التجربة: زواج، لقاء، خصوصية، وشراكة بنية واضحة.</p></div>
+      <div class="cin-marquee" aria-label="معرض صور عهد المتحرك"><div class="cin-track">
+        <figure><img src="./assets/ahad/hero-wedding-360.webp" width="360" height="240" alt="حفل زواج تعبيري" loading="lazy"></figure><figure><img src="./assets/ahad/majlis-session-360.webp" width="360" height="240" alt="جلسة تعارف تعبيرية" loading="lazy"></figure><figure><img src="./assets/ahad/couple-stroll-360.webp" width="360" height="240" alt="مشهد شراكة تعبيري" loading="lazy"></figure><figure><img src="./assets/ahad/privacy-niqab-360.webp" width="360" height="240" alt="مشهد خصوصية تعبيري" loading="lazy"></figure><figure><img src="./assets/ahad/woman-profile-360.webp" width="360" height="240" alt="بورتريه تعبيري لامرأة بالغة" loading="lazy"></figure><figure><img src="./assets/ahad/man-profile-360.webp" width="360" height="240" alt="بورتريه تعبيري لرجل بالغ" loading="lazy"></figure>
+        <figure aria-hidden="true"><img src="./assets/ahad/hero-wedding-360.webp" width="360" height="240" alt="" loading="lazy"></figure><figure aria-hidden="true"><img src="./assets/ahad/majlis-session-360.webp" width="360" height="240" alt="" loading="lazy"></figure><figure aria-hidden="true"><img src="./assets/ahad/couple-stroll-360.webp" width="360" height="240" alt="" loading="lazy"></figure><figure aria-hidden="true"><img src="./assets/ahad/privacy-niqab-360.webp" width="360" height="240" alt="" loading="lazy"></figure><figure aria-hidden="true"><img src="./assets/ahad/woman-profile-360.webp" width="360" height="240" alt="" loading="lazy"></figure><figure aria-hidden="true"><img src="./assets/ahad/man-profile-360.webp" width="360" height="240" alt="" loading="lazy"></figure>
+      </div></div>
+      <small>الصور المستخدمة تعبيرية ولا تمثل أعضاء أو حالات زواج فعلية.</small>
+    </section>
 
-    <section class="lux-final"><span class="lux-kicker">كل رحلة جادة تبدأ بخطوة واضحة</span><h2>ابدأ طلبك بسرية.</h2><p>نموذج أولي مختصر. لا ترسل هوية وطنية أو بيانات مالية أو صورًا خاصة في هذه المرحلة.</p><button class="lux-button lux-button-lg open-apply" type="button">قدّم طلب زواج</button></section>
+    <section id="faq" class="cin-faq reveal"><div class="cin-section-head"><span class="lux-kicker">أسئلة شائعة</span><h2>قبل أن تبدأ.</h2></div><div class="cin-faq-list"><details><summary>هل تظهر بياناتي أو صوري للجميع؟</summary><p>لا. عهد تقلل العرض العام للبيانات الحساسة، وتشارك ما يلزم فقط بحسب المرحلة والموافقة.</p></details><details><summary>هل تقديم الطلب يعني ضمان الزواج؟</summary><p>لا. التقديم والترشيح لا يعنيان ضمان الزواج؛ القرار النهائي مستقل لكل طرف.</p></details><details><summary>هل يمكن التسجيل للزواج الرسمي أو المسيار؟</summary><p>نعم، يمكن تحديد المسار المطلوب في الطلب مع مراعاة الضوابط والمتطلبات المطبقة.</p></details><details><summary>هل أحتاج حسابًا لتقديم طلب أولي؟</summary><p>لا. يمكنك إرسال الطلب الأولي مباشرة ثم تتواصل معك عهد عند اجتياز المراجعة المناسبة.</p></details></div></section>
+
+    <section class="cin-final reveal"><span class="lux-kicker">كل رحلة جادة تبدأ بخطوة واضحة</span><h2>ابدأ طلبك بسرية.</h2><p>نموذج أولي مختصر. لا ترسل هوية وطنية أو بيانات مالية أو صورًا خاصة في هذه المرحلة.</p><button class="lux-button lux-button-lg open-apply" type="button">قدّم طلب زواج</button></section>
   </main>
 
-  <footer class="lux-footer"><div class="lux-brand"><span class="lux-mark">ع</span><span><b>عهد</b><small>PRIVATE MARRIAGE MATCHMAKING</small></span></div><p>خدمة خاصة للتوفيق للزواج الجاد بخصوصية واحترام وموافقة الطرفين.</p><div><a href="./privacy.html">الخصوصية</a><a href="./terms.html">الشروط</a><a href="#faq">الأسئلة الشائعة</a><button class="lux-link open-auth" type="button">دخول الأعضاء</button></div><small>© 2026 AHAD. جميع الحقوق محفوظة. الصور المستخدمة تعبيرية وليست لأعضاء حقيقيين.</small></footer>
+  <footer class="lux-footer"><div class="lux-brand"><span class="lux-mark">ع</span><span><b>الخطّابة عهد</b><small>PRIVATE MARRIAGE MATCHMAKING</small></span></div><p>خدمة خاصة للتوفيق للزواج الجاد بخصوصية واحترام وموافقة الطرفين.</p><div><a href="./privacy.html">الخصوصية</a><a href="./terms.html">الشروط</a><a href="#faq">الأسئلة الشائعة</a><button class="lux-link open-auth" type="button">دخول الأعضاء</button></div><small>© 2026 AHAD. جميع الحقوق محفوظة. الصور المستخدمة تعبيرية وليست لأعضاء حقيقيين.</small></footer>
 
   <dialog id="applyDialog" class="lux-dialog"><button class="lux-dialog-close" type="button" aria-label="إغلاق">×</button><div class="lux-dialog-head"><span class="lux-kicker">طلب أولي سري</span><h2>طلب زواج</h2><p>أرسل الحد الأدنى من المعلومات اللازمة للمراجعة الأولية.</p></div><form id="publicMarriageForm"><input name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true"><div class="lux-form-grid"><label>أنا<select name="gender" required><option value="">اختر</option><option value="man">رجل</option><option value="woman">امرأة</option></select></label><label>العمر<input name="age" type="number" min="18" max="90" required inputmode="numeric"></label><label>المدينة<input name="city" required autocomplete="address-level2"></label><label>الجنسية<input name="nationality" required></label><label>الحالة الاجتماعية<select name="marital_status" required><option value="">اختر</option><option value="single">أعزب / عزباء</option><option value="divorced">مطلق / مطلقة</option><option value="widowed">أرمل / أرملة</option><option value="married">متزوج</option></select></label><label>المسار<select name="marriage_path" required><option value="official">رسمي</option><option value="misyar">مسيار</option><option value="both">كلاهما</option></select></label><label>أبحث عن<select name="seeking_gender" required><option value="woman">زوجة</option><option value="man">زوج</option></select></label><label>الجوال<input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="05xxxxxxxx"></label><label>البريد الإلكتروني<input name="email" type="email" autocomplete="email"></label><label>العمر المفضل من<input name="preferred_min_age" type="number" min="18" max="90" inputmode="numeric"></label><label>العمر المفضل إلى<input name="preferred_max_age" type="number" min="18" max="90" inputmode="numeric"></label><label class="lux-span2">نبذة مختصرة<textarea name="intro" maxlength="800" placeholder="ما الذي تبحث عنه؟ وما المهم بالنسبة لك؟"></textarea></label></div><label class="lux-consent"><input name="consent" type="checkbox" required><span>أوافق على استخدام هذه البيانات لغرض مراجعة طلب التوفيق والتواصل معي بشأنه.</span></label><p class="lux-form-note">يلزم رقم جوال أو بريد إلكتروني واحد على الأقل. لا ترسل هوية وطنية أو معلومات بنكية.</p><div id="publicFormStatus" class="lux-form-status" role="status" aria-live="polite"></div><button id="publicFormSubmit" class="lux-button lux-button-lg" type="submit">إرسال الطلب للمراجعة</button></form></dialog>
 </section>
