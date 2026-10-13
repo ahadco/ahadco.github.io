@@ -49,6 +49,7 @@ test('public request flow builds a valid GCC payload', async ({ page }) => {
   await form.locator('[name=marital_status]').selectOption('single');
   await form.locator('[name=marriage_path]').selectOption('official');
   await form.locator('[name=phone]').fill('+971501234567');
+  await form.locator('[name=email]').fill('release.test@example.com');
   await form.locator('[name=consent_privacy]').check();
   await form.locator('[name=consent_contact]').check();
   await form.locator('button[type=submit]').click();

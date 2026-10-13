@@ -4,6 +4,11 @@ const sb=createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY,{auth:{persistSessio
 const $=s=>document.querySelector(s),esc=(v="")=>String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const labels={new:"جديد",screening:"فرز",qualified:"مؤهل",contacted:"تم التواصل",matched:"تم الترشيح",serious:"جاد",closed:"مغلق",rejected:"مرفوض"};
 const state={user:null,staff:null,page:0,pageSize:25,total:0,apps:[],factorId:null,challengeId:null,tab:"applications"};
+const ADMIN_IDLE_MS=20*60*1000;
+let lastAdminActivity=Date.now();
+function touchAdminActivity(){lastAdminActivity=Date.now()}
+["click","keydown","pointerdown","touchstart"].forEach(evt=>document.addEventListener(evt,touchAdminActivity,{passive:true}));
+setInterval(async()=>{if(!state.user||document.hidden)return;if(Date.now()-lastAdminActivity<ADMIN_IDLE_MS)return;try{await sb.auth.signOut()}finally{location.reload()}},60*1000);
 function fmt(d){try{return new Intl.DateTimeFormat("ar-SA",{dateStyle:"medium",timeStyle:"short"}).format(new Date(d))}catch{return d||"-"}}
 function status(id,msg="",ok=false){const e=$(id);e.textContent=msg;e.style.color=ok?"#235f43":"#8a3030"}
 function show(id){["loginView","mfaView","dashboardView"].forEach(x=>$("#"+x).classList.toggle("hidden",x!==id));const on=id==="dashboardView";$("#logoutBtn").classList.toggle("hidden",!on);$("#refreshBtn").classList.toggle("hidden",!on)}
