@@ -32,3 +32,13 @@ button,a,input,select,textarea{font:inherit}button:focus-visible,a:focus-visible
 .legal-page{min-height:100vh;background:var(--paper);color:var(--ink)}.legal-shell{max-width:940px;margin:auto;padding:60px 22px 100px}.legal-shell .lux-brand{margin-bottom:55px}.legal-shell h1{font-size:clamp(40px,6vw,70px);margin:0 0 15px;font-weight:550}.legal-shell h2{font-size:25px;margin:42px 0 12px}.legal-shell p,.legal-shell li{color:#5f625c;line-height:2}.legal-shell .legal-meta{color:var(--sage);font-size:12px}.legal-shell a{color:var(--deep)}.legal-back{display:inline-flex;margin-top:40px}
 
 .hp-field{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
+
+/* WCAG AA release contrast hardening */
+:root{--sage:#4f604d;--gold:#70542f;--muted:#5b5953}
+.lux-editorial-women .lux-kicker{color:#f5e7c2}
+.lux-path-cards article>span{color:#6d522e}
+.lux-footer .lux-brand small{color:#c5cdc2}
+.lux-footer>small{color:#aeb8ac}
+
+.lux-final .lux-kicker{color:#485846}
+.lux-final p{color:#50534d}

@@ -68,7 +68,12 @@
     const age = Number(fd.get('age'));
     const gender = String(fd.get('gender') || '');
     const countryCodeRaw = String(fd.get('country_code') || 'SA').toUpperCase();
-    const countryCode = countryCodeRaw === 'OTHER' ? 'SA' : countryCodeRaw;
+    const countryCode = countryCodeRaw;
+    if (!/^(SA|AE|KW|QA|BH|OM)$/.test(countryCode)) {
+      status.textContent = 'اختر دولة مدعومة من القائمة.';
+      status.className = 'lux-form-status error';
+      return;
+    }
     const expectedSeeking = gender === 'man' ? 'woman' : gender === 'woman' ? 'man' : '';
     if (expectedSeeking) form.elements.seeking_gender.value = expectedSeeking;
     const min = Number(fd.get('preferred_min_age') || 0) || null;

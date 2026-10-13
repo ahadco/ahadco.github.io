@@ -1,0 +1,11 @@
+node_modules/
+test-results/
+playwright-report/
+coverage/
+backups/
+*.log
+.env
+.env.*
+!.env.example
+patch_*.py
+release_patch.py
